@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 15,
+    "editor.minimap.sectionHeaderFontSize": 12,
+    "screencastMode.fontSize": 60,
+    "debug.console.fontSize": 15,
+    "terminal.integrated.fontSize": 15,
+    "chat.editor.fontSize": 15,
+    "markdown.preview.fontSize": 16
+}
