@@ -10,12 +10,22 @@ public class Main {
             // ll.addLast(i);
             ll.display();
         }
-        System.out.println("calling remove function");
-        while(ll.size != 0){
-            ll.removeLast();
-            ll.display();
-        }
-        // System.out.println(ll);
+        // System.out.println("calling remove function");
+        // while(ll.size != 0){
+        //     ll.removeLast();
+        //     ll.display();
+        // }
+        // System.out.println("removing first");
+        // ll.removeFirst();
+        // ll.display();
+        
+        // ll.getNodeAt(1);
+        // System.out.println("adding node at idx");
+        // ll.addNode(3,10);
+        // ll.display();
+
+        ll.reverseData();
+        ll.display();
     }
 }
 
@@ -45,7 +55,8 @@ class LinkedList {
             tail = newNode;
         }
 
-        this.size = size++;
+        // this.size = size++;
+        size++;
     }
 
     public void addFirst(int data) {
@@ -58,7 +69,8 @@ class LinkedList {
             nn.next = head;
             head = nn;
         }
-        this.size = size++;
+        // this.size = size++;
+        size++;
     }
 
     public void removeLast(){
@@ -84,6 +96,63 @@ class LinkedList {
         tail = temp;
         size--;
     }
+
+    public void removeFirst(){
+        if(head == null){
+            System.out.println("nothing to remove");
+            return;
+        }
+        if(head.next == null){
+            head = null;
+            tail = null;
+        } else{
+            Node headNext = head.next;
+            head = headNext;
+        }
+        size--;
+    }
+
+    public Node getNodeAt(int idx){
+        if(idx < 0 || idx >= size){
+            System.out.println("out of bound");
+            return null;
+        } 
+        Node temp = head;
+        for(int i = 0; i < idx; i++){
+            Node tempNext = temp.next;
+            temp = tempNext;
+        }
+        return temp;
+    }
+
+    public void addNode(int idx, int data){
+        if(idx < 0 ||idx > size){
+            System.out.println("idx out of bound");
+            return;
+        }
+        if(idx == 0){
+            addFirst(data);
+        } else if(idx == size){
+            addLast(data);
+            return;
+        }
+
+        Node newNode = new Node(data);
+        Node prevNode = getNodeAt(idx-1);
+        Node nextNode = prevNode.next;
+
+        prevNode.next = null; //breaking connetion with rest of LL
+        prevNode.next = newNode; // connecting prev node to new node
+
+        newNode.next = nextNode;
+        // this.size++;
+        size++;
+    }
+
+    public void reverseData(){
+
+    }
+
     public void display() {
         Node temp = head;
 
