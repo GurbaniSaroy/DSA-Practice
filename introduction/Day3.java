@@ -1,27 +1,27 @@
 //inverse of a number, rotate a no. by 'k', gcd, lcm and prime factorization
 
-package intro1;
+// package intro1;
 
 import java.util.Scanner;
 
 public class Day3 {
    public static void main(String[] args) {
-      // ---------------inverse of a number-------------------
-      /*
-       * Scanner sc = new Scanner(System.in);
-       * int number = sc.nextInt();
-       * int ans=0 , temp=0;
-       * int pos = 1;
-       * while (number>0) {
-       * temp = number%10;
-       * number = number/10;
-       * ans = ans + pos*(int)(Math.pow(10,temp-1));
-       * pos++;
-       * System.out.println(ans);
-       * 
-       * }
-       * System.out.println(ans);
-       */
+      
+      
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int ans=0 , temp=0;
+        int pos = 1;
+        while (number>0) {
+        temp = number%10;
+        number = number/10;
+        ans = ans + pos*(int)(Math.pow(10,temp-1));
+        pos++;
+        System.out.println(ans);
+        
+        }
+        System.out.println(ans);
+       
 
       // -------------Rotate a number by 'k'----------------
       /*
@@ -62,28 +62,27 @@ public class Day3 {
        */
 
       // ---------------- GCD calculation ------------------
-      Scanner sc = new Scanner(System.in);
-      System.out.println("enter 1st no:");
-      int ip1 = sc.nextInt();
-      System.out.println("enter 2nd no:");
-      int ip2 = sc.nextInt();
-      int min = Math.min(ip1, ip2);
-      int max = Math.max(ip1, ip2);
-      int ans = 1;
-      if (max % min == 0) {
-         System.out.println("gcd"+min);
-      }
-      else {
+      // System.out.println("enter 1st no:");
+      // int ip1 = sc.nextInt();
+      // System.out.println("enter 2nd no:");
+      // int ip2 = sc.nextInt();
+      // int min = Math.min(ip1, ip2);
+      // int max = Math.max(ip1, ip2);
+      // int ans = 1;
+      // if (max % min == 0) {
+      //    System.out.println("gcd"+min);
+      // }
+      // else {
 
-         while (max % min != 0) {
-            ans = max % min;
-            max = min;
-            min = ans;
-         }
-         System.out.println("gcd:"+min);
-      }
+      //    while (max % min != 0) {
+      //       ans = max % min;
+      //       max = min;
+      //       min = ans;
+      //    }
+      //    System.out.println("gcd:"+min);
+      // }
       //----------------- LCM Calculator -------------------
       //formula no1*no2 = lcm*gcd
-      System.out.println("lcm:"+ (ip1*ip2)/min);
+      // System.out.println("lcm:"+ (ip1*ip2)/min);
    }
 }
